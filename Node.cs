@@ -12,13 +12,13 @@ namespace Ejercicio_Cola
         public object Dato;
         public Node(object Dato, Node Next)
         {
-            Dato = this.Dato;
-            Next = this.Next;
+            this.Dato = Dato;
+            this.Next = Next;
         }
 
         public Node(object Dato)
         {
-            Dato = this.Dato;
+            this.Dato = Dato;
             Next = null;
         }
     }

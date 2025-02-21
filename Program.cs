@@ -28,7 +28,7 @@ namespace Ejercicio_Cola
                 {
                     case "1":
                         Console.Write("Ingresa el nombre del cliente: ");
-                        object nombre = Console.ReadLine();
+                        string nombre = Console.ReadLine();
                         cola.Enqueue(nombre);
                         Console.WriteLine($"Cliente {nombre} agregado a la cola.");
                         break;

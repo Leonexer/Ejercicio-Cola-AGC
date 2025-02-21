@@ -9,9 +9,14 @@ namespace Ejercicio_Cola
 {
     internal class Queue
     {
-        Node Head;
-        Node Tail;
+        private Node Head = null;
+        private Node Tail = null;
 
+        public Queue()
+        {
+            this.Head = null;
+            this.Tail = null;
+        }
         public bool CheckQueueEmpty()
         {
             return Tail == null;
@@ -20,7 +25,7 @@ namespace Ejercicio_Cola
         {
             if (CheckQueueEmpty())
             {
-                Head = Tail = new Node(Cliente);
+                Tail = Head = new Node(Cliente);
             }
             else
             {
@@ -35,12 +40,13 @@ namespace Ejercicio_Cola
                 Console.WriteLine("No hay clientes Chato.");
                 return null;
             }
-            else
+            Object DequeuedObject = Head.Dato;
+            Head = Head.Next;
+            if (Head == null)
             {
-                object DequeuedObject = Head;
-                Head = Head.Next;
-                return DequeuedObject;
+                Tail = null;
             }
+            return DequeuedObject;
         }
 
         public void PrintQueue()
@@ -53,7 +59,7 @@ namespace Ejercicio_Cola
             }
             while (current != null)
             {
-                Console.Write("Posición en la cola: " + i +  " -> Cliente " + current.Dato);
+                Console.WriteLine("Posición en la cola: " + i +  " -> Cliente " + current.Dato);
                 current = current.Next;
                 i++;
 
